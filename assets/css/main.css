@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply text-black bg-white dark:bg-black;
+    }
+    .dark body {
+        @apply text-white bg-neutral-900;
+    }
+}
+
+@font-face {
+    font-family: 'Mona Sans';
+    src:
+      url('~/assets/fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+      url('~/assets/fonts/Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+}
+
+.clamp-hero-text {
+    font-size: clamp(32px, 4vw, 44px);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+  }
+  
+  .animate-delay {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: animate-delay;
+  }
+  
+  @keyframes animate-delay {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+      -webkit-transform: translateY(20px);
+      -moz-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+      -o-transform: translateY(20px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+    }
+  }
