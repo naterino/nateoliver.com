@@ -1,5 +1,12 @@
 <template>
-  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="true" class="mx-auto mb-4 max-w-7xl rounded px-8 pb-8 pt-6 text-sm shadow-md">
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="true"
+    class="mx-auto mb-4 max-w-7xl rounded px-8 pb-8 pt-6 text-sm shadow-md"
+    @submit="handleSubmit"
+  >
     <input type="hidden" name="form-name" value="contact">
     <div class="mb-4">
       <label class="mb-2 block" for="name">
@@ -27,14 +34,19 @@
   </form>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      name: '',
-      email: '',
-      message: ''
-    }
-  }
+<script setup>
+const handleSubmit = (event) => {
+  event.preventDefault()
+
+  const myForm = event.target
+  const formData = new FormData(myForm)
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString()
+  })
+    .then(() => console.log('Form Submitted!'))
+    .catch(error => alert(error))
 }
 </script>
