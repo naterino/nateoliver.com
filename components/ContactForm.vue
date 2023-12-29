@@ -35,6 +35,11 @@
 </template>
 
 <script setup>
+
+const name = ref('')
+const email = ref('')
+const message = ref('')
+
 const handleSubmit = (event) => {
   event.preventDefault()
 
