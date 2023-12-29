@@ -1,6 +1,6 @@
 <template>
+  <div>
     <AppHeader />
-    <div class="rounded">
-        <slot />
-    </div>
+    <slot />
+  </div>
 </template>
