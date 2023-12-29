@@ -1,0 +1,40 @@
+<template>
+  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="true" class="mx-auto mb-4 max-w-7xl rounded px-8 pb-8 pt-6 text-sm shadow-md">
+    <input type="hidden" name="form-name" value="contact">
+    <div class="mb-4">
+      <label class="mb-2 block" for="name">
+        Your Name:
+      </label>
+      <input id="name" v-model="name" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none" type="text">
+    </div>
+    <div class="mb-4">
+      <label class="mb-2" for="email">
+        Your Email:
+      </label>
+      <input id="email" v-model="email" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none" type="email">
+    </div>
+    <div class="mb-6">
+      <label class="mb-2 block" for="message">
+        Message:
+      </label>
+      <textarea id="message" v-model="message" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none" />
+    </div>
+    <div class="flex items-center justify-between">
+      <button class="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none" type="submit">
+        Send
+      </button>
+    </div>
+  </form>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      name: '',
+      email: '',
+      message: ''
+    }
+  }
+}
+</script>
