@@ -2,7 +2,8 @@
   <form
     name="contact"
     method="POST"
-    data-netlify="true"
+    netlify
+    netlify-honeypot
     class="mx-auto mb-4 max-w-7xl rounded px-8 pb-8 pt-6 text-sm shadow-md"
     @submit="handleSubmit"
   >
@@ -40,10 +41,6 @@ const handleSubmit = (event) => {
 
   const myForm = event.target
   const formData = new FormData(myForm)
-
-  const poop = new URLSearchParams(formData).toString()
-
-  console.log(poop)
 
   fetch('/', {
     method: 'POST',
